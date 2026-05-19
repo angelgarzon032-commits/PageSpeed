@@ -1,0 +1,436 @@
+/* ==========================================================================
+   PROYECTO: Estilos Base para PageSpeed
+   AUTOR: Angel Joel Garzon Castrillo
+   AÑO: 2026
+   ========================================================================== */
+
+/* --- Variables y Configuración General --- */
+:root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --accent-color: #a855f7; /* Púrpura dinámico */
+    --accent-hover: #c084fc;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --success: #22c55e;
+    --warning: #eab308;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background-color: rgba(15, 23, 42, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   SECCIÓN HERO (BIENVENIDA)
+   ========================================================================== */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(168, 85, 247, 0.15), transparent 60%);
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    background-color: var(--accent-color);
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SISTEMA DE MIGAS DE PAN (BREADCRUMBS)
+   ========================================================================== */
+.breadcrumbs-container {
+    padding: 1rem 10%;
+    background-color: var(--bg-secondary);
+}
+
+.breadcrumbs ol {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumbs li+li::before {
+    content: "/";
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+}
+
+.breadcrumbs a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs .current {
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES DE SECCIÓN E INFORMATIVOS
+   ========================================================================== */
+.info-section, .metrics-section {
+    padding: 5rem 10%;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+/* --- Grid de Tarjetas (Efecto Dinámico) --- */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--bg-secondary);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.1);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   SECCIÓN DE CORE WEB VITALS (MÉTRICAS)
+   ========================================================================== */
+.metric-box {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--text-muted);
+    transition: transform 0.2s ease;
+}
+
+.metric-box:hover {
+    transform: scale(1.01);
+}
+
+.metric-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.metric-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #000;
+}
+
+/* Colores dinámicos basados en el estado de optimización */
+.lcp { background-color: var(--success); color: var(--text-main); }
+.inp { background-color: var(--warning); }
+.cls { background-color: var(--danger); color: var(--text-main); }
+
+.metric-box p {
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   GESTIÓN DE IMÁGENES RESPONSIVAS Y MAQUETACIÓN EN BLOQUES
+   ========================================================================== */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.responsive-img:hover {
+    transform: scale(1.03);
+}
+
+/* Disposición de la introducción en la sección de Importancia */
+.importance-overview {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.overview-text {
+    flex: 1;
+}
+
+.overview-image {
+    flex: 1;
+}
+
+/* Alineación de Cajas de Métricas con sus respectivas imágenes */
+.metric-container {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.metric-container .metric-box {
+    flex: 1.5;
+    margin-bottom: 0;
+}
+
+.metric-container .metric-image {
+    flex: 1;
+}
+
+/* Inversión en espejo para generar el diseño en zig-zag */
+.metric-container.reverse {
+    flex-direction: row-reverse;
+}
+
+/* ==========================================================================
+   SECCIÓN DE CONSEJOS Y OPTIMIZACIÓN EXTRA
+   ========================================================================== */
+.optimization-section {
+    padding: 5rem 10%;
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.grid-optimization {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.opt-card {
+    background-color: rgba(15, 23, 42, 0.6);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.opt-card:hover {
+    border-color: var(--accent-color);
+    background-color: rgba(15, 23, 42, 0.9);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.2);
+}
+
+.opt-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: rgba(168, 85, 247, 0.15);
+    color: var(--accent-hover);
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.opt-card h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+}
+
+.opt-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilización de listas internas */
+.opt-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.opt-list li {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.opt-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-primary);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES - ADAPTABILIDAD RESPONSIVA
+   ========================================================================== */
+
+/* Ajustes para Tablets y Dispositivos Medios */
+@media (max-width: 900px) {
+    .importance-overview,
+    .metric-container,
+    .metric-container.reverse {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .responsive-img {
+        max-height: 200px;
+    }
+}
+
+/* Ajustes para Teléfonos Celulares */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .info-section, 
+    .metrics-section,
+    .optimization-section {
+        padding: 3rem 5%;
+    }
+}

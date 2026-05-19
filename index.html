@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- 
+      PROYECTO: Página Informativa de PageSpeed
+      AUTOR: Angel Joel Garzon Castrillo
+      AÑO: 2026
+      DESCRIPCIÓN: Sitio web estructurado y responsivo enfocado en la divulgación 
+                   de métricas de rendimiento web y Core Web Vitals.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagespeed</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+       1. ENCABEZADO Y BARRA DE NAVEGACIÓN (NAVBAR)
+       ========================================================================== -->
+    <header class="navbar">
+        <div class="logo">Page<span>Speed</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#importancia">Importancia</a></li>
+                <li><a href="#metricas">Métricas</a></li>
+                <li><a href="#consejos">Optimización</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==========================================================================
+       2. SECCIÓN PRINCIPAL / HERO
+       ========================================================================== -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Optimiza tu PageSpeed</h1>
+            <p>La velocidad de tu web no es un lujo, es el pilar fundamental de la experiencia de usuario y el SEO.</p>
+            <a href="#metricas" class="btn-primary">Ver Métricas Clave</a>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       3. SISTEMA DE MIGAS DE PAN (BREADCRUMBS)
+       ========================================================================== -->
+    <div class="breadcrumbs-container">
+        <nav aria-label="Breadcrumb" class="breadcrumbs">
+            <ol>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#metricas" class="current">Guía de PageSpeed</a></li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- ==========================================================================
+       4. CONTENIDO INFORMATIVO: IMPORTANCIA
+       ========================================================================== -->
+    <section id="importancia" class="info-section">
+        <h2>¿Por qué importa la velocidad de carga?</h2>
+        <p class="section-subtitle">El rendimiento web impacta directamente en el comportamiento de tus usuarios y en cómo te ve Google.</p>
+        
+        <!-- Bloque de introducción con texto e imagen combinados -->
+        <div class="importance-overview">
+            <div class="overview-text">
+                <h3>El impacto en el mundo real</h3>
+                <p>Cuando un usuario visita tu sitio, cada segundo de retraso disminuye la satisfacción del cliente y destruye tus métricas de conversión. Un sitio web optimizado no solo retiene tráfico, sino que reduce los costos de infraestructura y mejora el rendimiento en dispositivos móviles con conexiones lentas.</p>
+            </div>
+            <div class="overview-image">
+                <!-- Reemplaza "ruta-de-tu-imagen-importancia.jpg" por tu archivo real -->
+                <img src="img/velocidad.jpeg" alt="Gráfico de impacto de PageSpeed en la conversión" class="responsive-img">
+            </div>
+        </div>
+
+        <!-- Las 3 tarjetas se mantienen abajo -->
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Experiencia de Usuario (UX)</h3>
+                <p>Un sitio rápido retiene más usuarios. Si una página tarda más de 3 segundos en cargar, la probabilidad de rebote aumenta drásticamente.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3>Posicionamiento SEO</h3>
+                <p>Google utiliza la velocidad de carga como un factor de clasificación directo tanto en búsquedas de escritorio como móviles.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <h3>Conversión de Negocio</h3>
+                <p>Cada milisegundo cuenta. Las webs más rápidas registran tasas de conversión e ingresos por sesión considerablemente mayores.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       5. SECCIÓN DE MÉTRICAS (CORE WEB VITALS)
+       ========================================================================== -->
+    <section id="metricas" class="metrics-section">
+        <h2>Core Web Vitals: Las Métricas de Google</h2>
+        <p class="section-subtitle">Las tres métricas esenciales que Google evalúa para medir la salud del rendimiento de tu sitio:</p>
+
+        <!-- Métrica 1: LCP -->
+        <div class="metric-container">
+            <div class="metric-box">
+                <div class="metric-header">
+                    <span class="metric-badge lcp">LCP</span>
+                    <h3>Largest Contentful Paint (Carga)</h3>
+                </div>
+                <p>Mide el tiempo que tarda en renderizarse el elemento de contenido más grande visible en la pantalla. Lo ideal es que ocurra dentro de los primeros <strong>2.5 segundos</strong>.</p>
+            </div>
+            <div class="metric-image">
+                <!-- Reemplaza por tu imagen de LCP -->
+                <img src="img/lcp.png" alt="Ejemplo visual de Largest Contentful Paint" class="responsive-img">
+            </div>
+        </div>
+
+        <!-- Métrica 2: INP (Invertida visualmente para dinamismo) -->
+        <div class="metric-container reverse">
+            <div class="metric-box">
+                <div class="metric-header">
+                    <span class="metric-badge inp">INP</span>
+                    <h3>Interaction to Next Paint (Interactividad)</h3>
+                </div>
+                <p>Evalúa la capacidad de respuesta general de la página a las interacciones del usuario (como clics o pulsaciones). Un buen resultado es inferior a <strong>200 milisegundos</strong>.</p>
+            </div>
+            <div class="metric-image">
+                <!-- Reemplaza por tu imagen de INP -->
+                <img src="img/inp.png" alt="Ejemplo visual de Interaction to Next Paint" class="responsive-img">
+            </div>
+        </div>
+
+        <!-- Métrica 3: CLS -->
+        <div class="metric-container">
+            <div class="metric-box">
+                <div class="metric-header">
+                    <span class="metric-badge cls">CLS</span>
+                    <h3>Cumulative Layout Shift (Estabilidad Visual)</h3>
+                </div>
+                <p>Mide los cambios de diseño inesperados que ocurren durante la vida útil de la página. Debe mantenerse por debajo de un valor de <strong>0.1</strong>.</p>
+            </div>
+            <div class="metric-image">
+                <!-- Reemplaza por tu imagen de CLS -->
+                <img src="img/cls.png" alt="Ejemplo visual de Cumulative Layout Shift" class="responsive-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       6. SECCIÓN DE CONSEJOS DE OPTIMIZACIÓN
+       ========================================================================== -->
+    <section id="consejos" class="optimization-section">
+        <h2>Estrategias de Optimización</h2>
+        <p class="section-subtitle">¿Cómo mejorar tus puntuaciones y acelerar tu sitio web? Sigue estas buenas prácticas:</p>
+
+        <div class="grid-optimization">
+            <!-- Consejo 1: Medios -->
+            <div class="opt-card">
+                <div class="opt-badge">Imágenes</div>
+                <h3>Optimización de Medios</h3>
+                <p>Las imágenes pesadas son la causa número uno de un LCP deficiente.</p>
+                <ul class="opt-list">
+                    <li>Convertir imágenes a formatos modernos como <strong>WebP</strong> o <strong>AVIF</strong>.</li>
+                    <li>Implementar <strong>Lazy Loading</strong> (carga diferida) en elementos secundarios.</li>
+                    <li>Definir dimensiones explícitas (width y height) para evitar problemas de CLS.</li>
+                </ul>
+            </div>
+
+            <!-- Consejo 2: Código -->
+            <div class="opt-card">
+                <div class="opt-badge">Código</div>
+                <h3>Limpieza de Recursos</h3>
+                <p>Reducir el tamaño de los archivos ayuda a que el navegador procese el sitio mucho más rápido.</p>
+                <ul class="opt-list">
+                    <li>Minificar y comprimir archivos HTML, CSS y JavaScript (usando Gzip o Brotli).</li>
+                    <li>Eliminar el CSS y JS que no se esté utilizando en la carga inicial.</li>
+                    <li>Diferir (defer) o cargar de forma asíncrona (async) los scripts de terceros.</li>
+                </ul>
+            </div>
+
+            <!-- Consejo 3: Servidor -->
+            <div class="opt-card">
+                <div class="opt-badge">Servidor</div>
+                <h3>Infraestructura Eficiente</h3>
+                <p>La velocidad de respuesta inicial depende directamente de dónde esté alojada tu web.</p>
+                <ul class="opt-list">
+                    <li>Utilizar una **CDN** (Content Delivery Network) para distribuir el contenido globalmente.</li>
+                    <li>Configurar políticas agresivas de almacenamiento en caché del navegador.</li>
+                    <li>Optimizar las consultas a la base de datos y actualizar el entorno de hosting.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       7. PIE DE PÁGINA (FOOTER)
+       ========================================================================== -->
+    <footer class="footer">
+        <p>&copy; 2026 PageSpeed - Angel Joel Garzon Castrillo</p>
+    </footer>
+
+</body>
+</html>
